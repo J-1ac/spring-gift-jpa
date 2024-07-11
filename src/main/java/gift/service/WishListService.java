@@ -52,7 +52,8 @@ public class WishListService {
     }
 
     @Transactional
-    public WishResponseDto updateWishProduct(String email, WishUpdateRequestDto wishUpdateRequestDto) {
+    public WishResponseDto updateWishProduct(String email,
+        WishUpdateRequestDto wishUpdateRequestDto) {
         productService.validateExistProductId(wishUpdateRequestDto.getProductId());
         Wish wish = validateExistWishProduct(email, wishUpdateRequestDto.getProductId());
         wish.setCount(wishUpdateRequestDto.getCount());
